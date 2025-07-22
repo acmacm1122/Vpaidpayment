@@ -9,7 +9,7 @@ from telegram.ext import (
     CallbackQueryHandler
 )
 
-# Admin Telegram ID (သင့် Telegram ID ထည့်ပါ)
+# Admin Telegram ID
 ADMIN_ID = 7155245576
 
 async def start(update: Update, context: CallbackContext):
@@ -34,7 +34,6 @@ async def handle_photo(update: Update, context: CallbackContext):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    # Admin ထံပို့မယ်
     await context.bot.send_photo(
         chat_id=ADMIN_ID,
         photo=photo_file_id,
@@ -58,7 +57,7 @@ async def approve(update: Update, context: CallbackContext):
     await query.edit_message_caption(caption="✅ Approved by Admin")
 
 def main():
-    token = os.getenv("8143240744:AAHOfq7OecMTw2WvWJhvqDp-VOnO_cuHHQk")
+    token = os.getenv("BOT_TOKEN")  # ✅ correct way
     if not token:
         print("❌ BOT_TOKEN မတွေ့ပါ၊ Railway Variables ထဲထည့်ထားပါ။")
         return
