@@ -58,7 +58,7 @@ async def approve(update: Update, context: CallbackContext):
     await query.edit_message_caption(caption="✅ Approved by Admin")
 
 def main():
-    token = os.getenv("BOT_TOKEN")
+    token = os.getenv("8143240744:AAHOfq7OecMTw2WvWJhvqDp-VOnO_cuHHQk")
     if not token:
         print("❌ BOT_TOKEN မတွေ့ပါ၊ Railway Variables ထဲထည့်ထားပါ။")
         return
